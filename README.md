@@ -49,6 +49,11 @@ type AreaModel struct {
   })
 
   fmt.Println(data) // [{35 Jawa Timur }]
+
+  // Find by code ==> if not found it will return nil
+  data2 := ia.GetProvinceByCode("35")
+
+  fmt.Println(data2) // &{35 Jawa Timur }
   ```
 
 - **Get Districts**
@@ -76,6 +81,11 @@ type AreaModel struct {
   })
 
   fmt.Println(data) // [{3521 Kab. Ngawi 35}]
+
+  // Find by code ==> if not found it will return nil
+  data2 := ia.GetDistrictByCode("3521")
+
+  fmt.Println(data2) // &{3521 Kab. Ngawi 35}
   ```
 
 - **Get Sub Districts**
@@ -103,6 +113,11 @@ type AreaModel struct {
   })
 
   fmt.Println(data) // [{3521030 Jogorogo 3521}]
+
+  // Find by code ==> if not found it will return nil
+  data2 := ia.GetSubDistrictByCode("3521030")
+
+  fmt.Println(data2) // &{3521030 Jogorogo 3521}
   ```
 
 - **Get Urban Villages**
@@ -130,4 +145,10 @@ type AreaModel struct {
   })
 
   fmt.Println(data) // [{3521030009 Jogorogo 3521030}]
+
+
+  // Find by code ==> if not found it will return nil
+  data2 := ia.GeturbanVillageByCode("3521030009")
+
+  fmt.Println(data2) // &{3521030009 Jogorogo 3521030}
   ```

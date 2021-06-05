@@ -37,6 +37,17 @@ func GetProvinces(filters []AreaModel) ([]AreaModel, int) {
 	return getData(PROVINCE, filters)
 }
 
+// GetProvinceByCode find province by code
+func GetProvinceByCode(code string) *AreaModel {
+	data, _ := getData(PROVINCE, []AreaModel{{Code: code}})
+
+	if len(data) == 0 {
+		return nil
+	}
+
+	return &data[0]
+}
+
 // GetDistricts generate district datas
 func GetDistricts(filters []AreaModel) ([]AreaModel, int) {
 	return getData(DISTRICT, filters)
@@ -46,6 +57,17 @@ func GetDistricts(filters []AreaModel) ([]AreaModel, int) {
 func GetDistrictsByProvince(provinceCode string, filters []AreaModel) ([]AreaModel, int) {
 	filters = buildFilterParent(provinceCode, filters)
 	return getData(DISTRICT, filters)
+}
+
+// GetDistrictByCode find district by code
+func GetDistrictByCode(code string) *AreaModel {
+	data, _ := getData(DISTRICT, []AreaModel{{Code: code}})
+
+	if len(data) == 0 {
+		return nil
+	}
+
+	return &data[0]
 }
 
 // GetSUbDistricts generate sub districts datas
@@ -59,6 +81,17 @@ func GetSubDistrictsByDistrict(districtCode string, filters []AreaModel) ([]Area
 	return getData(SUBDISTRICT, filters)
 }
 
+// GetSubDistrictByCode find sub district by code
+func GetSubDistrictByCode(code string) *AreaModel {
+	data, _ := getData(SUBDISTRICT, []AreaModel{{Code: code}})
+
+	if len(data) == 0 {
+		return nil
+	}
+
+	return &data[0]
+}
+
 // GetUrbanVillages generate urban villages datas
 func GetUrbanVillages(filters []AreaModel) ([]AreaModel, int) {
 	return getData(URBANVILLAGE, filters)
@@ -68,4 +101,15 @@ func GetUrbanVillages(filters []AreaModel) ([]AreaModel, int) {
 func GetUrbanVillagesBySubDistrict(subDistrictCode string, filters []AreaModel) ([]AreaModel, int) {
 	filters = buildFilterParent(subDistrictCode, filters)
 	return getData(URBANVILLAGE, filters)
+}
+
+// GetUrbanVillageByCode find urban village by code
+func GetUrbanVillageByCode(code string) *AreaModel {
+	data, _ := getData(URBANVILLAGE, []AreaModel{{Code: code}})
+
+	if len(data) == 0 {
+		return nil
+	}
+
+	return &data[0]
 }
