@@ -148,7 +148,7 @@ type AreaModel struct {
 
 
   // Find by code ==> if not found it will return nil
-  data2 := ia.GeturbanVillageByCode("3521030009")
+  data2 := ia.GetUrbanVillageByCode("3521030009")
 
   fmt.Println(data2) // &{3521030009 Jogorogo 3521030}
   ```
